@@ -17,10 +17,12 @@ class ViewController: UIViewController {
     // MARK: - Properties
     
     fileprivate var isMFAEnabled = false
-        
+    
     private let permissions: [String] = ["public_profile", "email"]
     
-    @IBOutlet weak var facebookButton: FBLoginButton!
+    
+    @IBOutlet weak var facebookView: UIView!
+    
     private lazy var facebookSignInButton: FBLoginButton = {
         let btn = FBLoginButton()
         btn.permissions = permissions
@@ -31,15 +33,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        facebookView.backgroundColor = .clear
+        facebookView.layer.cornerRadius = 20
         setupFacebook()
+        setAutoLayout()
     }
     
     // MARK: - Cutom Methods
     
     private func setupFacebook() {
-        view.addSubview(facebookButton)
-        facebookButton.center = view.center
-        facebookButton.delegate = self
+        facebookView.addSubview(facebookSignInButton)
+        facebookSignInButton.delegate = self
+    }
+    
+    private func setAutoLayout() {
+        facebookSignInButton.topAnchor.constraint(equalTo: facebookView.topAnchor, constant: 0).isActive = true
+        facebookSignInButton.leadingAnchor.constraint(equalTo: facebookView.leadingAnchor, constant: 0).isActive = true
+        facebookSignInButton.trailingAnchor.constraint(equalTo: facebookView.trailingAnchor, constant: 0).isActive = true
+        facebookSignInButton.bottomAnchor.constraint(equalTo: facebookView.bottomAnchor, constant: 0).isActive = true
+        facebookSignInButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
     // (1) 구글 로그인 버튼 클릭
@@ -112,7 +124,7 @@ extension ViewController: LoginButtonDelegate {
             print("토큰", accessToken)
             
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
-
+            
             Auth.auth().signIn(with: credential) { authResult, error in
                 if let error = error {
                     let authError = error as NSError
@@ -179,6 +191,12 @@ extension ViewController: LoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("로그아웃")
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
 }
 
@@ -187,26 +205,26 @@ extension ViewController: LoginButtonDelegate {
 extension ViewController {
     
     func showMessagePrompt(_ message: String) {
-      let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-      alert.addAction(okAction)
-      present(alert, animated: false, completion: nil)
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
     }
     
     func showTextInputPrompt(withMessage message: String,
-                               completionBlock: @escaping ((Bool, String?) -> Void)) {
+                             completionBlock: @escaping ((Bool, String?) -> Void)) {
         let prompt = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-          completionBlock(false, nil)
+            completionBlock(false, nil)
         }
         weak var weakPrompt = prompt
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-          guard let text = weakPrompt?.textFields?.first?.text else { return }
-          completionBlock(true, text)
+            guard let text = weakPrompt?.textFields?.first?.text else { return }
+            completionBlock(true, text)
         }
         prompt.addTextField(configurationHandler: nil)
         prompt.addAction(cancelAction)
         prompt.addAction(okAction)
         present(prompt, animated: true, completion: nil)
-      }
+    }
 }

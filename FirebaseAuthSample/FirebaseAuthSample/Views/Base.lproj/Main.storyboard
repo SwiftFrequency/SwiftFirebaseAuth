@@ -24,15 +24,17 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Cz-v7-STH">
-                                <rect key="frame" x="15" y="514" width="384" height="308"/>
+                                <rect key="frame" x="15" y="542" width="384" height="280"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLI-ch-QPa">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="62"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="facebookLogin"/>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3C-lJ-8nH">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="55"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="dGl-5W-zYr"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCb-uE-cOU">
-                                        <rect key="frame" x="0.0" y="82" width="384" height="62"/>
+                                        <rect key="frame" x="0.0" y="75" width="384" height="55"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="googleLogin"/>
                                         <connections>
@@ -40,12 +42,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3Y-RC-Yu7">
-                                        <rect key="frame" x="0.0" y="164" width="384" height="62"/>
+                                        <rect key="frame" x="0.0" y="150" width="384" height="55"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="appleLogin"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-7o-H6d">
-                                        <rect key="frame" x="0.0" y="246" width="384" height="62"/>
+                                        <rect key="frame" x="0.0" y="225" width="384" height="55"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="githubLogin"/>
                                     </button>
@@ -73,7 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nfJ-3z-T0c"/>
                     <connections>
-                        <outlet property="facebookButton" destination="aLI-ch-QPa" id="fdr-3a-gOG"/>
+                        <outlet property="facebookView" destination="a3C-lJ-8nH" id="KhT-d1-j2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,7 +134,6 @@
     </scenes>
     <resources>
         <image name="appleLogin" width="345" height="54"/>
-        <image name="facebookLogin" width="345" height="54"/>
         <image name="githubLogin" width="345" height="54"/>
         <image name="googleLogin" width="351" height="62"/>
         <image name="logo" width="128" height="128"/>
