@@ -11,4 +11,8 @@ target 'FirebaseAuthSample' do
 
   # Pods for Google login
   pod 'GoogleSignIn'
+  
+  # Pods for Facebook login
+  pod 'FBSDKLoginKit'
+  
 end
