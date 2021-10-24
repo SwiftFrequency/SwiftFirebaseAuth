@@ -1,6 +1,6 @@
 # SFAssets
 
-Swift Frequency 개발을 위한 에셋을 관리하기 위한 저장소입니다.
+`SFA: Swift Firebase Auth Project✨` `파이어베이스로 로그인/회원가입 뿌수기`
 
 > Login View (로그인 뷰)
 
