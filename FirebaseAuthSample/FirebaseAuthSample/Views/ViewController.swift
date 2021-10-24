@@ -7,14 +7,19 @@
 
 import UIKit
 
+import FBSDKLoginKit
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var facebookSignInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        facebookSignInButton.permissions = ["public_profile", "email"]
+
     }
 
     // (1) 구글 로그인 버튼 클릭
