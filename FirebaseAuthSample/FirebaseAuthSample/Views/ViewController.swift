@@ -14,11 +14,21 @@ import GoogleSignIn
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var facebookSignInButton: UIButton!
-    
+    var facebookSignInButton: FBLoginButton = {
+        let btn = FBLoginButton()
+        btn.permissions = ["public_profile", "email"]
+        return btn
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        facebookSignInButton.permissions = ["public_profile", "email"]
+        view.addSubview(facebookSignInButton)
+        
+        facebookSignInButton.center = view.center
+        
+        if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller.
+//            let credential = FacebookAuthProvider.credential(withAccessToken: token)
+        }
 
     }
 
