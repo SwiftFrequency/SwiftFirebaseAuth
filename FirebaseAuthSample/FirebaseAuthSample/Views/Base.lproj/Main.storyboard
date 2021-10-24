@@ -72,6 +72,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nfJ-3z-T0c"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="aLI-ch-QPa" id="fdr-3a-gOG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         
     private let permissions: [String] = ["public_profile", "email"]
     
+    @IBOutlet weak var facebookButton: FBLoginButton!
     private lazy var facebookSignInButton: FBLoginButton = {
         let btn = FBLoginButton()
         btn.permissions = permissions
@@ -36,9 +37,9 @@ class ViewController: UIViewController {
     // MARK: - Cutom Methods
     
     private func setupFacebook() {
-        view.addSubview(facebookSignInButton)
-        facebookSignInButton.center = view.center
-        facebookSignInButton.delegate = self
+        view.addSubview(facebookButton)
+        facebookButton.center = view.center
+        facebookButton.delegate = self
     }
     
     // (1) 구글 로그인 버튼 클릭
@@ -98,7 +99,7 @@ class ViewController: UIViewController {
     }
 }
 
-// MARK: - LoginButtonDelegate
+// MARK: - Facebook LoginButtonDelegate
 
 extension ViewController: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
@@ -171,6 +172,7 @@ extension ViewController: LoginButtonDelegate {
                     }
                     return
                 }
+                self.transitionToDetailViewController()
             }
         }
     }
