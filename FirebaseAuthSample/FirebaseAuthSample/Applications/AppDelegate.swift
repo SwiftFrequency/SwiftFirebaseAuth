@@ -8,6 +8,7 @@
 import UIKit
 
 import FBSDKCoreKit
+import FBSDKLoginKit
 import Firebase
 import FirebaseCore
 import GoogleSignIn
@@ -20,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        _ = FBLoginButton.self
+
         return true
     }
     
