@@ -9,15 +9,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-                <string>fb864509100924928</string>
+                <string>fb246575540844046</string>
 				<string>com.googleusercontent.apps.622388099660-8tc5h1b9pja86nu56ac0jnfvsg2vr2f7</string>
 			</array>
 		</dict>
 	</array>
     <key>FacebookAppID</key>
-    <string>864509100924928</string>
+    <string>246575540844046</string>
     <key>FacebookClientToken</key>
-    <string>1f290f58f5f986bd03fb6ea307ccfde6</string>
+    <string>241f0a713a504504ead12210b1edcc57</string>
     <key>FacebookDisplayName</key>
     <string>Swift Frequency</string>
     <key>LSApplicationQueriesSchemes</key>
