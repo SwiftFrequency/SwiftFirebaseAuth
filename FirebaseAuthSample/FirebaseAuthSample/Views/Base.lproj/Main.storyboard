@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BJ1-3e-LOK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BJ1-3e-LOK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,6 +50,9 @@
                                         <rect key="frame" x="0.0" y="225" width="384" height="55"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="githubLogin"/>
+                                        <connections>
+                                            <action selector="githubLoginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="maX-d3-aW2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -112,6 +115,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOk-QX-sgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1672" y="131"/>
+        </scene>
+        <!--Github Login View Controller-->
+        <scene sceneID="Kak-6J-aKE">
+            <objects>
+                <viewController storyboardIdentifier="GithubLoginViewController" id="ypR-nS-YPj" customClass="GithubLoginViewController" customModule="FirebaseAuthSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mXu-ma-V41">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깃허브 로그인 완료!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDI-oY-Xv9">
+                                <rect key="frame" x="85" y="194" width="244.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azU-VS-PCN">
+                                <rect key="frame" x="10" y="282.5" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU4-QL-JLE">
+                                <rect key="frame" x="170.5" y="343.5" width="73" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="ypR-nS-YPj" eventType="touchUpInside" id="Ag0-MY-Mpq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rsG-UJ-w8Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lDI-oY-Xv9" firstAttribute="top" secondItem="rsG-UJ-w8Z" secondAttribute="top" constant="150" id="DjA-yh-vVA"/>
+                            <constraint firstItem="rU4-QL-JLE" firstAttribute="centerX" secondItem="azU-VS-PCN" secondAttribute="centerX" id="Fco-60-Sbf"/>
+                            <constraint firstItem="lDI-oY-Xv9" firstAttribute="centerX" secondItem="rsG-UJ-w8Z" secondAttribute="centerX" id="Ouz-Ts-jnh"/>
+                            <constraint firstItem="azU-VS-PCN" firstAttribute="centerX" secondItem="lDI-oY-Xv9" secondAttribute="centerX" id="SdT-tL-VCG"/>
+                            <constraint firstItem="rsG-UJ-w8Z" firstAttribute="trailing" secondItem="azU-VS-PCN" secondAttribute="trailing" constant="10" id="VSc-71-Q1i"/>
+                            <constraint firstItem="azU-VS-PCN" firstAttribute="leading" secondItem="rsG-UJ-w8Z" secondAttribute="leading" constant="10" id="e24-da-CGE"/>
+                            <constraint firstItem="rU4-QL-JLE" firstAttribute="top" secondItem="azU-VS-PCN" secondAttribute="bottom" constant="40" id="hII-XL-BuH"/>
+                            <constraint firstItem="azU-VS-PCN" firstAttribute="top" secondItem="lDI-oY-Xv9" secondAttribute="bottom" constant="50" id="j55-Na-s8E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailLogin" destination="azU-VS-PCN" id="Wo5-LZ-8gJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J30-66-E7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2462.3188405797105" y="130.58035714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O5y-Js-Cn7">

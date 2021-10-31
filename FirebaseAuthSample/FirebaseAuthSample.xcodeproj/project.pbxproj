@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1563633D272EAC1500AFED71 /* GithubLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563633C272EAC1500AFED71 /* GithubLoginViewController.swift */; };
 		BD65487527215EFC007DF68F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65487427215EFC007DF68F /* AppDelegate.swift */; };
 		BD65487727215EFC007DF68F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65487627215EFC007DF68F /* SceneDelegate.swift */; };
 		BD65487927215EFC007DF68F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65487827215EFC007DF68F /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1563633C272EAC1500AFED71 /* GithubLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubLoginViewController.swift; sourceTree = "<group>"; };
 		26842C70D9D7A6C0BBE4FDAD /* Pods-FirebaseAuthSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAuthSample.release.xcconfig"; path = "Target Support Files/Pods-FirebaseAuthSample/Pods-FirebaseAuthSample.release.xcconfig"; sourceTree = "<group>"; };
 		BD65487127215EFC007DF68F /* FirebaseAuthSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseAuthSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD65487427215EFC007DF68F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				BDE5B195272306DF001707BC /* MainViewController.swift */,
+				1563633C272EAC1500AFED71 /* GithubLoginViewController.swift */,
 				BD65487827215EFC007DF68F /* ViewController.swift */,
 				BD65487A27215EFC007DF68F /* Main.storyboard */,
 			);
@@ -241,6 +244,7 @@
 				BD65487927215EFC007DF68F /* ViewController.swift in Sources */,
 				BD65487527215EFC007DF68F /* AppDelegate.swift in Sources */,
 				BD65487727215EFC007DF68F /* SceneDelegate.swift in Sources */,
+				1563633D272EAC1500AFED71 /* GithubLoginViewController.swift in Sources */,
 				BDE5B196272306DF001707BC /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
@@ -406,6 +411,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taekki.dev.FirebaseAuthSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -418,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
@@ -435,6 +442,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taekki.dev.FirebaseAuthSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
