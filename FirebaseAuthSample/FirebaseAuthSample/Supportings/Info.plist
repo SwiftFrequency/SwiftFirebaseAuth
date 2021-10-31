@@ -9,35 +9,35 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-                <string>fb246575540844046</string>
+				<string>fb246575540844046</string>
 				<string>com.googleusercontent.apps.622388099660-8tc5h1b9pja86nu56ac0jnfvsg2vr2f7</string>
 			</array>
 		</dict>
 	</array>
-    <key>FacebookAppID</key>
-    <string>246575540844046</string>
-    <key>FacebookClientToken</key>
-    <string>241f0a713a504504ead12210b1edcc57</string>
-    <key>FacebookDisplayName</key>
-    <string>Swift Frequency</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fbapi20130214</string>
-      <string>fbapi20130410</string>
-      <string>fbapi20130702</string>
-      <string>fbapi20131010</string>
-      <string>fbapi20131219</string>
-      <string>fbapi20140410</string>
-      <string>fbapi20140116</string>
-      <string>fbapi20150313</string>
-      <string>fbapi20150629</string>
-      <string>fbapi20160328</string>
-      <string>fbauth</string>
-      <string>fb-messenger-share-api</string>
-      <string>fbauth2</string>
-      <string>fbshareextension</string>
-    </array>
+	<key>FacebookAppID</key>
+	<string>246575540844046</string>
+	<key>FacebookClientToken</key>
+	<string>241f0a713a504504ead12210b1edcc57</string>
+	<key>FacebookDisplayName</key>
+	<string>Swift Frequency</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbauth</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
