@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     private lazy var facebookSignInButton: FBLoginButton = {
         let btn = FBLoginButton()
         btn.permissions = permissions
+        btn.delegate = self
         return btn
     }()
     
@@ -33,20 +34,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        facebookView.backgroundColor = .clear
-        facebookView.layer.cornerRadius = 20
-        setupFacebook()
+        configUI()
         setAutoLayout()
     }
     
-    // MARK: - Cutom Methods
+    // MARK: - Custom Methods
     
-    private func setupFacebook() {
-        facebookView.addSubview(facebookSignInButton)
-        facebookSignInButton.delegate = self
+    private func configUI() {
+        facebookView.backgroundColor = .clear
+        facebookView.layer.cornerRadius = 10
+        facebookView.layer.masksToBounds = true
     }
     
     private func setAutoLayout() {
+        facebookView.addSubview(facebookSignInButton)
+
         facebookSignInButton.topAnchor.constraint(equalTo: facebookView.topAnchor, constant: 0).isActive = true
         facebookSignInButton.leadingAnchor.constraint(equalTo: facebookView.leadingAnchor, constant: 0).isActive = true
         facebookSignInButton.trailingAnchor.constraint(equalTo: facebookView.trailingAnchor, constant: 0).isActive = true
@@ -259,3 +261,4 @@ extension ViewController {
         present(prompt, animated: true, completion: nil)
     }
 }
+

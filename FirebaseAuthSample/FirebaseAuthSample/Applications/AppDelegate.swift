@@ -20,9 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         _ = FBLoginButton.self
-
+        
         return true
     }
     
@@ -32,13 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     -> Bool {
         
         // URL 열기 기능
-        ApplicationDelegate.shared.application(
+        let googlehandler = GIDSignIn.sharedInstance.handle(url)
+        let fbHandler = ApplicationDelegate.shared.application(
             application,
             open: url,
             sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
         
-        return GIDSignIn.sharedInstance.handle(url)
+        return googlehandler || fbHandler
     }
     
     // MARK: UISceneSession Lifecycle
