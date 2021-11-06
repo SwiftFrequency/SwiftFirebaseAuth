@@ -6,10 +6,14 @@
 
 <img src = "./DocsAssets/LoginView.png" width = "250" />
 
-**담당**
-|기능|배정|
+
+
+> **담당**
+
+
+|`feature`|`배정`|
 |:--:|:--:|
-|Facebook Login|후릐|
-|Google Login|태끼|
-|Apple Login|이준초이|
-|[Github Login](https://spark-chive-e55.notion.site/Firebase-Github-Login-73fcab436c0d4be89b0a1a1dfc5f3c46)|씨워터|
+|[`Facebook Login`](https://huree-can-do-it.notion.site/Firebase-Facebook-Auth-29e237fbe8c044918054dcfa591653aa)|`후릐`|
+|`Google Login`|`태끼`|
+|`Apple Login`|`이준초이`|
+|[`Github Login`](https://spark-chive-e55.notion.site/Firebase-Github-Login-73fcab436c0d4be89b0a1a1dfc5f3c46)|`씨워터`|
