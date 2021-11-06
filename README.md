@@ -12,4 +12,4 @@
 |Facebook Login|후릐|
 |Google Login|태끼|
 |Apple Login|이준초이|
-|Github Login|씨워터|
+|[Github Login](https://spark-chive-e55.notion.site/Firebase-Github-Login-73fcab436c0d4be89b0a1a1dfc5f3c46)|씨워터|
