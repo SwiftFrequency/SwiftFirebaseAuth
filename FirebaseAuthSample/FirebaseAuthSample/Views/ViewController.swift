@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     fileprivate var isMFAEnabled = false
     
     private let permissions: [String] = ["public_profile", "email"]
+    var provider = OAuthProvider(providerID: "github.com")
     
     @IBOutlet weak var facebookView: UIView!
     
@@ -110,6 +111,11 @@ class ViewController: UIViewController {
         window.rootViewController = mainVC
         window.makeKeyAndVisible()
     }
+    
+    @IBAction func githubLoginButtonClicked(_ sender: Any) {
+        print("깃허브 로그인 버튼 클릭")
+        loginGithub()
+    }
 }
 
 // MARK: - Facebook LoginButtonDelegate
@@ -197,6 +203,32 @@ extension ViewController: LoginButtonDelegate {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
+        }
+    }
+}
+
+// MARK: - Github Login Extension
+extension ViewController {
+    func loginGithub() {
+        print("깃허브 로그인")
+        //var provider = OAuthProvider(providerID: "github.com")
+        provider.getCredentialWith(nil) { credential, error in
+            
+            Auth.auth().signIn(with: credential!) { authResult, error in
+                if error != nil { print("에러", error) }
+            
+//                guard let oauthCredential = authResult?.credential as? OAuthCredential
+//                else { return }
+                
+                if Auth.auth().currentUser != nil {
+                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "GithubLoginViewController") as? GithubLoginViewController else { return }
+                    nextVC.emailData = Auth.auth().currentUser?.email ?? "x"
+                    nextVC.modalPresentationStyle = .fullScreen
+                    self.present(nextVC, animated: true, completion: nil)
+                } else {
+                    print("No user is signed in")
+                }
+            }
         }
     }
 }
